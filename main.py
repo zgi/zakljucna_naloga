@@ -34,8 +34,7 @@ class BaseHandler(webapp2.RequestHandler):
 class MainHandler(BaseHandler):
     def get(self):
         user = users.get_current_user()
-#        ip = self.request.remote_addr
-        ip = '89.212.249.128'
+        ip = self.request.remote_addr
         user_loc= urlfetch.fetch('https://ipapi.co/' + ip + '/latlong/')
         user_loc_split = user_loc.content.split(',')
         lat = user_loc_split[0]
