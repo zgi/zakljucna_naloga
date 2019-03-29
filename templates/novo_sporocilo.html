@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block title %}Novo sporocilo{% endblock title %}
+{% block novo_sporocilo %}
+
+<h1>Napisi novo sporocilo</h1>
+<form method="POST" action="/novo">
+    <input type="text" pattern="[a-zA-Z0-9!#$%&amp;'*+\/=?^_`{|}~.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*" name="naslovnik" value="{{ email }}" placeholder="e-naslov prejemnika" required>
+    <input type="text" name="zadeva" placeholder="Zadeva sporocila">
+    <textarea name="sporocilo" placeholder="Vnesi sporocilo" required></textarea>
+    <input type="submit" value="Poslji">
+</form>
+{% endblock novo_sporocilo %}

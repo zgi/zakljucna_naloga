@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block title %}Preberi sporocilo{% endblock title %}
+{% block preberi %}
+<hr>
+<h1>{{ sporocilo.zadeva }}</h1>
+<h2>Od: {{ sporocilo.posiljatelj }}</h2>
+<hr>
+<p>{{ sporocilo.sporocilo }}</p>
+<hr>
+<button onclick="location.href = '/novo?email={{ sporocilo.posiljatelj }}'">Odgovori</button>
+<button onclick="window.history.back()">Nazaj</button>
+{% endblock preberi %}

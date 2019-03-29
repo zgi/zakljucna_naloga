@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>bMail</title>
+    <script src="../../assets/js/bmail.js"></script>
+    </head>
+<body>
+<h1><a href="/">bMail</a></h1>
+{% if logiran %}
+    <p><a href="{{ logout_url }}">Odjava</a></p>
+    <ul>
+        <li><a href="/novo">Novo sporocilo</a></li>
+        <li><a href="/prejeto">Prejeto</a></li>
+        <li><a href="/poslano">Poslano</a></li>
+        <li><a href="/izbrisano">Izbrisano</a></li>
+        <li><a href="/stiki">Stiki</a></li>
+    </ul>
+
+{% block novo_sporocilo %}{% endblock novo_sporocilo %}
+{% block prejeto %}{% endblock prejeto %}
+{% block poslano %}{% endblock poslano %}
+{% block izbrisano %}{% endblock izbrisano %}
+{% block stiki %}{% endblock stiki %}
+{% block preberi %}{% endblock preberi %}
+{% block pozdrav %}{% endblock pozdrav %}
+{% else %}
+    <h1>Zivjo uporabnik bMaila</h1>
+    <p>Prosim prijavi se: <a href="{{ login_url }}">Login</a></p>
+{% endif %}
+</body>
+</html>

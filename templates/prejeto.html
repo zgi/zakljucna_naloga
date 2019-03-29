@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% block title %}Prejeto{% endblock title %}
+{% block prejeto %}
+
+<hr>
+{% for sporocilo in sporocila %}
+    <h3>Od: {{ sporocilo.posiljatelj }}</h3>
+    {% if sporocilo.prebrano %}
+        <p>Prebrano</p>
+    {% else %}
+        <p>Novo</p>
+    {% endif %}
+    <h1><a href="/preberi/{{ sporocilo.key.id() }}">Zadeva: {{ sporocilo.zadeva }}</a></h1>
+    <h4>Prejeto: {{ sporocilo.nastanek }}</h4>
+    <p>{{ sporocilo.sporocilo }}</p>
+    <button onclick="location.href = '/novo?email={{ sporocilo.posiljatelj }}'">Odgovori</button>
+    <button onclick="izbrisi({{ sporocilo.key.id() }})">Izbrisi</button>
+    <hr>
+{% endfor %}
+
+{% endblock prejeto %}

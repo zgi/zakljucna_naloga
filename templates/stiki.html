@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% block title %}Stiki{% endblock title %}
+{% block stiki %}
+
+<hr>
+{% for naslov in naslovi %}
+<h4><a href="/novo?email={{ naslov }}">{{ naslov }}</a></h4>
+    <hr>
+{% endfor %}
+
+{% endblock stiki %}
